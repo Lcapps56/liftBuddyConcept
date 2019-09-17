@@ -1,7 +1,6 @@
 var n = 0;
 $("#submit").on("click", function (event) {
     event.preventDefault()
-    
     //checks the muscles checkbox to create array of muscle groups chosen
     var muscles = [];
     $.each($("input[name='muscle']:checked"), function () {
@@ -18,27 +17,51 @@ $("#submit").on("click", function (event) {
         satisfaction: $("input[name='inlineRadioOptions']:checked").val(),
     }
 
-
-    var workout = new Array(4);
-    for (var i = 0; i < n + 1; i++) {
-        workout[i] = new Array(4)
-        workout[i]["type"] = $("#Type" + i + "").val(),
-        workout[i]["sets"] = $("#Sets" + i + "").val(),
-        workout[i]["reps"] = $("#Reps" + i + "").val(),
-        workout[i]["weight"] = $("#Weight" + i + "").val()
+    //taking the values of the workouts 
+    var workoutArray = new Array(4);
+    for (let i = 0; i < n + 1; i++) {
+        workoutArray[i] = new Array(4)
+        workoutArray[i]["type"] = $("#Type" + i + "").val(),
+        workoutArray[i]["sets"] = $("#Sets" + i + "").val(),
+        workoutArray[i]["reps"] = $("#Reps" + i + "").val(),
+        workoutArray[i]["weight"] = $("#Weight" + i + "").val()
 
     }
-    console.log(workout)
+    console.log(workoutArray)
+    var workoutArray
+    workoutObject = workoutArray.prototype.reduce()
+    console.log(workoutObject)
+
+    //the post will only accept an object as its data
+    //my workoutArray is an array of arrays. 
+    // i need to convert it to some kind of object format that that it will go into the post 
+    // workout = {
+    //     one: {
+    //         type: "bench",
+    //         sets: "3",
+    //         reps: "8",
+    //         weight: "140"
+    //     },
+    //     two: {
+    //         type: "flys",
+    //         sets: "3",
+    //         reps: "8",
+    //         weight: "50"
+    //     }
+    // }
+    
+    var test = {
+        this: "that",
+        that: "this"
+    }
     // sending the object to the server
     $.ajax({
         type: "POST",
-        data: workout,
-        url: "/api/workout"
+        data: test,
+        url: "/api/workout",
     }).then(function(){
         console.log("sent to server")
     })
-
-
 })
 
 //adding new field to add a new workout

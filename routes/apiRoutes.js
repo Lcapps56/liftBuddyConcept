@@ -1,4 +1,4 @@
-// require the workout model that was made in sequelize
+var Workout = require("../database/workout.js")
 
 module.exports = function(app){
     app.post("/api/workout", function(req, res) {
