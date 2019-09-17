@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
-var Workout = sequelize.define("workout", {
+var Workout  = sequelize.define("workout", {
     Date: Sequelize.DATE,
     Type: Sequelize.STRING,
     Sets: Sequelize.STRING,

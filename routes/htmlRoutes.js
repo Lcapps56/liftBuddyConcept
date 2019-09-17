@@ -5,9 +5,9 @@ module.exports = function(app){
         res.sendFile(path.join(__dirname, "../public/Home.html"))
     })
     app.get("/form", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/index.html"))
+        res.sendFile(path.join(__dirname, "../public/Form.html"))
     })
-    app.get("/stats", function(req, res){
-        res.sendFile(path.join(__dirname, "../public/stats.html"))
+    app.get("/calendar", function(req, res){
+        res.sendFile(path.join(__dirname, "../public/Calendar.html"))
     })
 }

@@ -8,56 +8,39 @@ $("#submit").on("click", function (event) {
     });
 
     //that object that will be passed into the database
-    var workoutForm = {
-        date: Date.now(),
-        muscles: muscles,
-        startTime: $("#startTime").val(),
-        endTime: $("endTime").val(),
-        restTime: $("#restTime").val(),
-        satisfaction: $("input[name='inlineRadioOptions']:checked").val(),
-    }
+    // var workoutForm = {
+    //     date: Date.now(),
+    //     muscles: muscles,
+    //     startTime: $("#startTime").val(),
+    //     endTime: $("endTime").val(),
+    //     restTime: $("#restTime").val(),
+    //     satisfaction: $("input[name='inlineRadioOptions']:checked").val(),
+    // }
 
     //taking the values of the workouts 
-    var workoutArray = new Array(4);
+    var workoutArr = []
+    
     for (let i = 0; i < n + 1; i++) {
-        workoutArray[i] = new Array(4)
-        workoutArray[i]["type"] = $("#Type" + i + "").val(),
-        workoutArray[i]["sets"] = $("#Sets" + i + "").val(),
-        workoutArray[i]["reps"] = $("#Reps" + i + "").val(),
-        workoutArray[i]["weight"] = $("#Weight" + i + "").val()
-
+        workoutObject = {
+            type: $("#Type" + i + "").val(),
+            sets: $("#Sets" + i + "").val(),
+            reps: $("#Reps" + i + "").val(),
+            weight: $("#Weight" + i + "").val()
+        }
+        workoutArr.push(workoutObject)
     }
-    console.log(workoutArray)
-    var workoutArray
-    workoutObject = workoutArray.prototype.reduce()
-    console.log(workoutObject)
-
+    console.log(workoutArr)
+    
     //the post will only accept an object as its data
     //my workoutArray is an array of arrays. 
     // i need to convert it to some kind of object format that that it will go into the post 
-    // workout = {
-    //     one: {
-    //         type: "bench",
-    //         sets: "3",
-    //         reps: "8",
-    //         weight: "140"
-    //     },
-    //     two: {
-    //         type: "flys",
-    //         sets: "3",
-    //         reps: "8",
-    //         weight: "50"
-    //     }
-    // }
     
-    var test = {
-        this: "that",
-        that: "this"
-    }
+    // ===================================
+    
     // sending the object to the server
     $.ajax({
         type: "POST",
-        data: test,
+        data: {workout: workoutArr},
         url: "/api/workout",
     }).then(function(){
         console.log("sent to server")
