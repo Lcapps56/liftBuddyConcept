@@ -1,4 +1,6 @@
 var n = 0;
+
+
 $("#submit").on("click", function (event) {
     event.preventDefault()
     //checks the muscles checkbox to create array of muscle groups chosen

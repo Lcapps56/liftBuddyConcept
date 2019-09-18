@@ -1,0 +1,8 @@
+client ID: 
+206399804622-fut2ubmif08t3e6uusrm3g32d7mr3kps.apps.googleusercontent.com
+
+client secret: 
+SLS_eOpJbRh2_gBaafIdcjY0
+
+API key: 
+AIzaSyDQzGwbRgZmF7vwnh_t182CZIPC5A-1yk8
