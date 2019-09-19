@@ -26,12 +26,6 @@
  *
  */
 
-$.ajax({
-    type: "GET",
-    url: "/api/retrieve"
-}).then(function(response){
-    console.log(response)
-})
 
 class iCalendar {
     constructor(target) {
@@ -129,7 +123,10 @@ class iCalendar {
                     }
                     a.setAttribute('data-id', this.currentYear + '-' + actualMonth + '-' + date)
                     
-                    a.setAttribute("hasWorkout", false)
+                    a.setAttribute("data-hasWorkout", false)
+                    // a.setAttribute("clicked", false)
+                    
+
                     a.setAttribute('class', 'calendarLink');
                     a.appendChild(cellText);
                     div.appendChild(a);
@@ -256,3 +253,6 @@ class iCalendarEvent {
         this.color = "";
     }
 }
+
+
+

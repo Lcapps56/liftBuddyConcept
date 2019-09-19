@@ -12,6 +12,14 @@ header a {
     padding: 8px;
 }
 
+/* .category {
+    float: left;
+} */
+.workout{
+    margin: 12px;
+    float: left;
+}
+
 [v-cloak] {
     display: none;
 }

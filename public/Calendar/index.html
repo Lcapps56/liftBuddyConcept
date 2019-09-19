@@ -21,10 +21,20 @@
 
         <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <!-- <script src="css/iCalendar.css"></script> -->
+<!-- java for the calendar -->
     <script src="js/iCalendar.js"></script>
     <div id="calendar"></div>
+
+    <div id="ex1" class="modal">            
+        <h1>Your Workout</h1>
+        <div id="modalText">
+            
+        </div>
+        <a href="#" id="modalClose" rel="modal:close">Close</a>
+    </div>
+          
+          <!-- Link to open the modal -->
+
     <script>
         var iCal = new iCalendar('calendar');
         iCal.render();
@@ -32,6 +42,10 @@
             console.log(iCal.selectedDate);
         });
     </script>
+<!-- JS for the modal -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 
     <script src="js/MyJS.js"></script>
 </body>
