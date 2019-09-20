@@ -10,48 +10,44 @@ $("#submit").on("click", function (event) {
     });
 
     //that object that will be passed into the database
-    var workoutForm = {
-        muscles: (muscles).toString(),
-        startTime: ($("#startTime").val()).toString(),
-        endTime: ($("#endTime").val()).toString(),
-        restTime: ($("#restTime").val()).toString(),
-        satisfaction: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
+    var createForm = {
+        title: ($("#workoutName").val().toString()),
+        muscles: (muscles).toString(),  
+        difficulty: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
+        notes: ($("#notes").val().toString())
     }
-    console.log(workoutForm)
-    // send the Other info into the database
-    $.ajax({
-        type: "POST",
-        data: {workoutForm: workoutForm},
-        url: "/api/workoutOther",
-    }).then(function(){
-        console.log("sent to server")
-    })
-    // ===================================
+    console.log(createForm)
+    // $.ajax({
+    //     type: "POST",
+    //     data: {createForm: createForm},
+    //     url: "/api/routineOther",
+    // }).then(function(){
+    //     console.log("routines Other sent to server")
+    // })
 
-    //taking the values of the workouts 
-    var workoutArr = []
+    // ===========================================================
+    var routine = []
     for (let i = 0; i < n + 1; i++) {
         workoutObject = {
+            title: ($("#workoutName").val().toString()),
             type: $("#Type" + i + "").val(),
             sets: $("#Sets" + i + "").val(),
             reps: $("#Reps" + i + "").val(),
             weight: $("#Weight" + i + "").val()
         }
-        workoutArr.push(workoutObject)
+        routine.push(workoutObject)
     }
-    console.log(workoutArr)
-    
-    // sending the workout object to the server
+    console.log(routine)
     $.ajax({
         type: "POST",
-        data: {workout: workoutArr},
-        url: "/api/workout",
+        data: {routine: routine},
+        url: "/api/routine",
     }).then(function(){
-        console.log("sent to server")
+        console.log("routine sent to server")
     })
 })
 
-//adding new field to add a new workout
+
 $("#newField").on("click", function (event) {
     n = n + 1;
     var newrow = $("<div class='row'></div>")

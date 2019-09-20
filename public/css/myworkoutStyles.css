@@ -1,0 +1,13 @@
+header{
+    margin: 30px 80px;
+    padding-bottom: 40px;
+}
+header h1 {
+    float: left;
+}
+header a {
+    float: right;
+    margin: 0px 80px 0px 0px;
+    font-size: 20px;
+    padding: 8px;
+}
