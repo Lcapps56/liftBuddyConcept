@@ -1,6 +1,7 @@
 var Workout = require("../database/workout.js")
 var WorkoutOther = require("../database/workoutOther.js")
 var Routine = require("../database/routine.js")
+var RoutineOther = require("../database/routineOther.js")
 
 
 module.exports = function (app) {
@@ -159,7 +160,16 @@ module.exports = function (app) {
             })
         }
     })
-
+    app.post("/api/routineOther", function(req, res){
+        RoutineOther.create({
+            Title: req.body.createForm.title,
+            Muscles: req.body.createForm.muscles,
+            Difficulty: req.body.createForm.difficulty,
+            Notes: req.body.createForm.notes
+        }).then(function(){
+            console.log("routine Other entered into the database")
+        })
+    })
     // when the calendar page loads, gather all data
     app.get("/api/retrieve", function (req, res) {
         console.log("heard")
@@ -183,6 +193,21 @@ module.exports = function (app) {
                 Date: req.params.date
             }
         }).then(function (response) {
+            res.json(response)
+        })
+    })
+    // when the "my workouts" page loads, gather all Routine Other data
+    app.get("/api/retreiveR", function(req, res){
+        RoutineOther.findAll({}).then(function(response){
+            res.json(response)
+        })
+    })
+    app.get("/api/Rmodal/:title", function(req, res){
+        Routine.findAll({
+            where: {
+                Title: req.params.title
+            }
+        }).then(function(response){
             res.json(response)
         })
     })

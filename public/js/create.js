@@ -17,13 +17,13 @@ $("#submit").on("click", function (event) {
         notes: ($("#notes").val().toString())
     }
     console.log(createForm)
-    // $.ajax({
-    //     type: "POST",
-    //     data: {createForm: createForm},
-    //     url: "/api/routineOther",
-    // }).then(function(){
-    //     console.log("routines Other sent to server")
-    // })
+    $.ajax({
+        type: "POST",
+        data: {createForm: createForm},
+        url: "/api/routineOther",
+    }).then(function(){
+        console.log("routines Other sent to server")
+    })
 
     // ===========================================================
     var routine = []
