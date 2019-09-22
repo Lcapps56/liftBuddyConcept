@@ -20,7 +20,7 @@ function onLoad() {
 }
 
 $(document).ready(function(){
-    $("a #viewW").on("click", function(){
+    $("#viewW").on("click", function(){
         alert("clicked")
         $(this).attr({
             href: "#ex1", 
