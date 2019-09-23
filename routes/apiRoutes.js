@@ -94,22 +94,10 @@ module.exports = function (app) {
     app.post("/api/workout", function (req, res) {
         console.log(req.body.workout)
         // logic for creating the correct date format 
-        d = new Date()
-        var year = d.getFullYear()
-        var year = String(year)
-        var month = d.getMonth()
-        var month = "0" + parseInt(month + 1)
-        if (month.length === 3) {
-            month = d.getMonth + 1
-        }
-        var day = d.getDate()
-        var dateT = year + "-" + month + "-" + day
-        var date = dateT.toString()
-
-
+    
         for (let i = 0; i < req.body.workout.length; i++) {
             Workout.create({
-                Date: date,
+                Date: req.body.workout[i].Date,
                 Type: req.body.workout[i].type,
                 Sets: req.body.workout[i].sets,
                 Reps: req.body.workout[i].reps,
@@ -123,20 +111,10 @@ module.exports = function (app) {
     // when the form submits, put the other information into the other database table
     app.post("/api/workoutOther", function (req, res) {
         //logic for creating the correct date format
-        d = new Date()
-        var year = d.getFullYear()
-        var year = String(year)
-        var month = d.getMonth()
-        var month = "0" + parseInt(month + 1)
-        if (month.length === 3) {
-            month = d.getMonth + 1
-        }
-        var day = d.getDate()
-        var dateT = year + "-" + month + "-" + day
-        var date = dateT.toString()
+        
 
         WorkoutOther.create({
-            Date: date,
+            Date: req.body.workoutForm.Date,
             Muscles: req.body.workoutForm.muscles,
             StartTime: req.body.workoutForm.startTime,
             EndTime: req.body.workoutForm.endTime,

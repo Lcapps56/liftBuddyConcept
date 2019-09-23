@@ -1,8 +1,34 @@
 var n = 0;
 
 
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+var thisDate = new Date
+var thisMonth = "0" + parseInt(thisDate.getMonth() + 1)
+var thisDay = thisDate.getDate()
+console.log(thisDay)
+
 $("#submit").on("click", function (event) {
     event.preventDefault()
+    //logic to convert date to correct format and use everywhere else
+    let Sdate = $("#datepicker").val()
+    console.log(Sdate)
+    let Y = Sdate.substring(6, 10)
+    let M = Sdate.substring(0, 2)
+    var D = Sdate.substring(3, 5) 
+    if(D[0] === "0" ){
+        D = D.substring(1)
+    }
+    console.log("D: " + D)
+    var date = Y + "-" + M + "-" + D
+    console.log(date)
+
+//   VALIDATIONS
+    if(M > thisMonth || D > thisDay){
+        alert("cannot input a future day")
+    } else {
+
     //checks the muscles checkbox to create array of muscle groups chosen
     var muscles = [];
     $.each($("input[name='muscle']:checked"), function () {
@@ -11,6 +37,7 @@ $("#submit").on("click", function (event) {
 
     //that object that will be passed into the database
     var workoutForm = {
+        Date: date,
         muscles: (muscles).toString(),
         startTime: ($("#startTime").val()).toString(),
         endTime: ($("#endTime").val()).toString(),
@@ -18,20 +45,22 @@ $("#submit").on("click", function (event) {
         satisfaction: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
     }
     console.log(workoutForm)
+    
     // send the Other info into the database
-    $.ajax({
-        type: "POST",
-        data: {workoutForm: workoutForm},
-        url: "/api/workoutOther",
-    }).then(function(){
-        console.log("sent to server")
-    })
+    // $.ajax({
+    //     type: "POST",
+    //     data: {workoutForm: workoutForm},
+    //     url: "/api/workoutOther",
+    // }).then(function(){
+    //     console.log("sent to server")
+    // })
     // ===================================
 
     //taking the values of the workouts 
     var workoutArr = []
     for (let i = 0; i < n + 1; i++) {
         workoutObject = {
+            Date: date,
             type: $("#Type" + i + "").val(),
             sets: $("#Sets" + i + "").val(),
             reps: $("#Reps" + i + "").val(),
@@ -42,13 +71,14 @@ $("#submit").on("click", function (event) {
     console.log(workoutArr)
     
     // sending the workout object to the server
-    $.ajax({
-        type: "POST",
-        data: {workout: workoutArr},
-        url: "/api/workout",
-    }).then(function(){
-        console.log("sent to server")
-    })
+    // $.ajax({
+    //     type: "POST",
+    //     data: {workout: workoutArr},
+    //     url: "/api/workout",
+    // }).then(function(){
+    //     console.log("sent to server")
+    // })
+}   
 })
 
 //adding new field to add a new workout

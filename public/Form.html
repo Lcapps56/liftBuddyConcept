@@ -9,7 +9,9 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/formStyle.css" />
     <title>Document</title>
-    
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
 </head>
 
 <body>
@@ -22,131 +24,147 @@
     </header>
     <!-- muslce group checkboxes -->
     <div id="body">
-    <div class="section">
-        <form id="muscle">
-            <h1>What muslce groups</h1>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle" value="Arms">
-                <label class="form-check-label" for="inlineCheckbox1">Arms</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle" value="Chest">
-                <label class="form-check-label" for="inlineCheckbox2">Chest</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle"
-                    value="Shoulders">
-                <label class="form-check-label" for="inlineCheckbox1">Shoulders</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle" value="Back">
-                <label class="form-check-label" for="inlineCheckbox2">Back</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle" value="Core">
-                <label class="form-check-label" for="inlineCheckbox1">Core</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle" value="Legs">
-                <label class="form-check-label" for="inlineCheckbox2">Legs</label>
-            </div>
-        </form>
-    </div>
-
-    <!-- workout type section -->
-    <div class="section" id="workout">
-        <h1>What was the workout</h1>
-        <div class='row' id="workout-table">
-            <table>
-
-            </table>
+        <div class="section">
+            <form id="muscle">
+                <h1>What muslce groups</h1>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle"
+                        value="Arms">
+                    <label class="form-check-label" for="inlineCheckbox1">Arms</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle"
+                        value="Chest">
+                    <label class="form-check-label" for="inlineCheckbox2">Chest</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle"
+                        value="Shoulders">
+                    <label class="form-check-label" for="inlineCheckbox1">Shoulders</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle"
+                        value="Back">
+                    <label class="form-check-label" for="inlineCheckbox2">Back</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox1" name="muscle"
+                        value="Core">
+                    <label class="form-check-label" for="inlineCheckbox1">Core</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="checks form-check-input" type="checkbox" id="inlineCheckbox2" name="muscle"
+                        value="Legs">
+                    <label class="form-check-label" for="inlineCheckbox2">Legs</label>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col">
-                <input id="Type0" type="text" class="form-control" placeholder="Type">
-            </div>
-            <div class="col">
-                <input id="Sets0" type="number" class="form-control" placeholder="Sets">
-            </div>
-            <div class="col">
-                <input id="Reps0" type="number" class="form-control" placeholder="Reps">
-            </div>
-            <div class="col">
-                <input id="Weight0" type="number" class="form-control" placeholder="Weight">
-            </div>
-        </div>
-    </div>
-    <button id="newField" type="button" class="btn btn-primary">Add</button>
 
-    <!--Time-->
-    <div class="section">
-        <h1>Log your times</h1>
-        <div class="row">
-            <div class="col">
-                <input id="startTime" type="time" class="form-control" placeholder="Start time">
+        <!-- workout type section -->
+        <div class="section" id="workout">
+            <h1>What was the workout</h1>
+            <div class='row' id="workout-table">
+                <table>
+
+                </table>
             </div>
-            <div class="col">
-                <input id="endTime" type="time" class="form-control" placeholder="End time">
-            </div>
-            <div class="col">
-                <input id="restTime" type="number" class="form-control" placeholder="Rest time (mins)">
+            <div class="row">
+                <div class="col">
+                    <input id="Type0" type="text" class="form-control" placeholder="Type">
+                </div>
+                <div class="col">
+                    <input id="Sets0" type="number" class="form-control" placeholder="Sets">
+                </div>
+                <div class="col">
+                    <input id="Reps0" type="number" class="form-control" placeholder="Reps">
+                </div>
+                <div class="col">
+                    <input id="Weight0" type="number" class="form-control" placeholder="Weight">
+                </div>
             </div>
         </div>
-    </div>
+        <button id="newField" type="button" class="btn btn-primary">Add</button>
 
-    <!-- SATISFACTION -->
-    <div class="section">
-        <h1>How happy with workout</h1>
-        <form id="satisfaction">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-                <label class="form-check-label" for="inlineRadio1">1</label>
+        <!--Time-->
+        <div class="section">
+            <h1>Log your times</h1>
+            <div class="row">
+                <div class="col">
+                    <input id="startTime" type="time" class="form-control" placeholder="Start time">
+                </div>
+                <div class="col">
+                    <input id="endTime" type="time" class="form-control" placeholder="End time">
+                </div>
+                <div class="col">
+                    <input id="restTime" type="number" class="form-control" placeholder="Rest time (mins)">
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-                <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+
+        <!-- DATE -->
+        <div class="section">
+            <div class="col">
+                <h1>Date</h1>
+                <p>Date: <input type="text" id="datepicker"></p>            
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-                <label class="form-check-label" for="inlineRadio3">3</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="4">
-                <label class="form-check-label" for="inlineRadio4">4</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="5">
-                <label class="form-check-label" for="inlineRadio5">5</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="6">
-                <label class="form-check-label" for="inlineRadio6">6</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="7">
-                <label class="form-check-label" for="inlineRadio7">7</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="8">
-                <label class="form-check-label" for="inlineRadio8">8</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="9">
-                <label class="form-check-label" for="inlineRadio9">9</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="10">
-                <label class="form-check-label" for="inlineRadio10">10</label>
-            </div>
-        </form>
+        </div>
+        <!-- SATISFACTION -->
+        <div class="section">
+            <h1>How happy with workout</h1>
+            <form id="satisfaction">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+                    <label class="form-check-label" for="inlineRadio3">3</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="4">
+                    <label class="form-check-label" for="inlineRadio4">4</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="5">
+                    <label class="form-check-label" for="inlineRadio5">5</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="6">
+                    <label class="form-check-label" for="inlineRadio6">6</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="7">
+                    <label class="form-check-label" for="inlineRadio7">7</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="8">
+                    <label class="form-check-label" for="inlineRadio8">8</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="9">
+                    <label class="form-check-label" for="inlineRadio9">9</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="10">
+                    <label class="form-check-label" for="inlineRadio10">10</label>
+                </div>
+            </form>
+        </div>
+        <a href="/home"><button id="submit" type="button" class="btn btn-primary">Submit</button></a>
     </div>
-    <a href="/home" ><button id="submit" type="button" class="btn btn-primary">Submit</button></a>
     </div>
-</div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="./js/form.js"></script>
+
+  <!-- jquery for date picker -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 
 

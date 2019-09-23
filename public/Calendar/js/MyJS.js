@@ -19,7 +19,7 @@ $(".day a").on("click", function(event){
             // put the SQL data in the modal
             var title = $("<h1>Your Workout</h1>")
             var newDivO = $("<div class='workoutOther clearfix'></div>")
-            var newMuscles = $("<h4>Muscle group: "+ response[0].Muscles + "</h4><hr>")
+            var newMuscles = $("<h3>Muscle group: "+ response[0].Muscles + "</h3><hr>")
             var newStart = $("<p class='category' >"+ "Start time: " + response[0].StartTime + "</p>")
             var newEnd = $("<p class='category' >"+ "End time: " + response[0].EndTime + "</p>")
             var newRest = $("<p class='category' >"+ "Total rest: " + response[0].RestTime + "</p>")
@@ -70,11 +70,6 @@ $("a #buttonNew").on("click", function(){
 
 
 function onLoad(){
-    // add a button to add a workout to that date
-    $(".day a").each(function(){
-        var button = $("<a date=" + $(this).data("id") + " id='buttonNew'>+</a>")
-        $(this).append(button)
-    })
     // gather all SQL data for date comparisons
     $.ajax({
         type: "GET",
@@ -86,9 +81,8 @@ function onLoad(){
             if($(this).attr("data-id") === response[i].Date){    
                 $(this).data("hasWorkout", true)
                 $(this).css("background", "#b3c4ff")
-                // make the + button go away
-                // var newGroup = $("<div class='Mgroup'><p>"+response[i].Muscles+"</p></div>" )
-                // $(this).append(newGroup)
+                var newGroup = $("<p>"+response[i].Muscles+"</p>" )
+                $(this).append(newGroup)
             }
         })
     })
