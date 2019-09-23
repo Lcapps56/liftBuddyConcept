@@ -9,7 +9,7 @@ $("#submit").on("click", function (event) {
         muscles.push($(this).val());
     });
 
-    //that object that will be passed into the database
+    //that routine Other that will be passed into the database
     var createForm = {
         title: ($("#workoutName").val().toString()),
         muscles: (muscles).toString(),  
@@ -26,6 +26,7 @@ $("#submit").on("click", function (event) {
     })
 
     // ===========================================================
+    //the routine
     var routine = []
     for (let i = 0; i < n + 1; i++) {
         workoutObject = {

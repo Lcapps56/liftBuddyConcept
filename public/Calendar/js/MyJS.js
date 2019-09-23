@@ -81,8 +81,6 @@ function onLoad(){
             if($(this).attr("data-id") === response[i].Date){    
                 $(this).data("hasWorkout", true)
                 $(this).css("background", "#b3c4ff")
-                var newGroup = $("<p>"+response[i].Muscles+"</p>" )
-                $(this).append(newGroup)
             }
         })
     })

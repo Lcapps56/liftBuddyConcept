@@ -48,6 +48,7 @@ header a {
     color: blue;
     text-decoration: underline;
 }
+
 .view:hover{
     font-size: 18px;
 }
