@@ -22,6 +22,10 @@ header a {
 
 }
 
+#ex1{
+    overflow: auto
+}
+
 #buttonNew{
     /* text-align: center; */
     display: inline-block; 

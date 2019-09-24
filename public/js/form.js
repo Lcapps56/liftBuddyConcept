@@ -47,13 +47,13 @@ $("#submit").on("click", function (event) {
     console.log(workoutForm)
     
     // send the Other info into the database
-    // $.ajax({
-    //     type: "POST",
-    //     data: {workoutForm: workoutForm},
-    //     url: "/api/workoutOther",
-    // }).then(function(){
-    //     console.log("sent to server")
-    // })
+    $.ajax({
+        type: "POST",
+        data: {workoutForm: workoutForm},
+        url: "/api/workoutOther",
+    }).then(function(){
+        console.log("sent to server")
+    })
     // ===================================
 
     //taking the values of the workouts 
@@ -71,13 +71,13 @@ $("#submit").on("click", function (event) {
     console.log(workoutArr)
     
     // sending the workout object to the server
-    // $.ajax({
-    //     type: "POST",
-    //     data: {workout: workoutArr},
-    //     url: "/api/workout",
-    // }).then(function(){
-    //     console.log("sent to server")
-    // })
+    $.ajax({
+        type: "POST",
+        data: {workout: workoutArr},
+        url: "/api/workout",
+    }).then(function(){
+        console.log("sent to server")
+    })
 }   
 })
 
