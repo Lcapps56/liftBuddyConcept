@@ -47,6 +47,13 @@ header a {
     color: black;
     overflow: visible;
 }
+#Mtype::placeholder{
+    font-size: 30px;
+    font-weight: 500;
+}
+#ex1{
+    overflow: auto
+}
 
 
 .view:hover{
