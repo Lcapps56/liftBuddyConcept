@@ -93,9 +93,6 @@ module.exports = function (app) {
     Routine.bulkCreate([
         {
             Title: "The First",
-            Muscles: "Arms",
-            Difficulty: "3",
-            Notes: "None for now",
             Type: "Push ups",
             Sets: "3",
             Reps: "10",
@@ -103,9 +100,6 @@ module.exports = function (app) {
         },
         {
             Title: "The First",
-            Muscles: "Arms",
-            Difficulty: "3",
-            Notes: "None for now",
             Type: "Sit ups",
             Sets: "3",
             Reps: "10",
@@ -113,9 +107,6 @@ module.exports = function (app) {
         },
         {
             Title: "The First",
-            Muscles: "Arms",
-            Difficulty: "3",
-            Notes: "None for now",
             Type: "Pull ups",
             Sets: "4",
             Reps: "10",
@@ -124,16 +115,16 @@ module.exports = function (app) {
     ]).then(function(){
         console.log("Routine seed entered into database")
     })
-    // RoutineOther.bulkCreate([
-    //     {
-    //         Title: "The First",
-    //         Muscles: "Arms",
-    //         Difficulty: "3",
-    //         Notes: "None for now"
-    //     }
-    // ]).then(function(){
-    //     console.log("Routines Other seed entered into database")
-    // })
+    RoutineOther.bulkCreate([
+        {
+            Title: "The First",
+            Muscles: "Arms",
+            Difficulty: "3",
+            Notes: "None for now"
+        }
+    ]).then(function(){
+        console.log("Routines Other seed entered into database")
+    })
 
     // when the form submits, put the workout into the database
     app.post("/api/workout", function (req, res) {
@@ -174,10 +165,6 @@ module.exports = function (app) {
     app.post("/api/routine", function (req, res) {
         for (let i = 0; i < req.body.routine.length; i++) {
             Routine.create({
-                Title: req.body.createForm.title,
-                Muscles: req.body.createForm.muscles,
-                Difficulty: req.body.createForm.difficulty,
-                Notes: req.body.createForm.notes,
                 Title: req.body.routine[i].title,
                 Type: req.body.routine[i].type,
                 Sets: req.body.routine[i].type,
@@ -188,16 +175,16 @@ module.exports = function (app) {
             })
         }
     })
-    // app.post("/api/routineOther", function(req, res){
-    //     RoutineOther.create({
-    //         Title: req.body.createForm.title,
-    //         Muscles: req.body.createForm.muscles,
-    //         Difficulty: req.body.createForm.difficulty,
-    //         Notes: req.body.createForm.notes
-    //     }).then(function(){
-    //         console.log("routine Other entered into the database")
-    //     })
-    // })
+    app.post("/api/routineOther", function(req, res){
+        RoutineOther.create({
+            Title: req.body.createForm.title,
+            Muscles: req.body.createForm.muscles,
+            Difficulty: req.body.createForm.difficulty,
+            Notes: req.body.createForm.notes
+        }).then(function(){
+            console.log("routine Other entered into the database")
+        })
+    })
     // when the calendar page loads, gather all data
     app.get("/api/retrieve", function (req, res) {
         console.log("heard")
@@ -226,14 +213,18 @@ module.exports = function (app) {
         })
     })
     // when the "my workouts" page loads, gather all Routine Other data
-    // app.get("/api/retreiveR", function(req, res){
-    //     RoutineOther.findAll({}).then(function(response){
-    //         res.json(response)
-    //     })
-    // })
-    app.get("/api/Routine/", function(req, res){
+    app.get("/api/retreiveR", function(req, res){
+        RoutineOther.findAll({}).then(function(response){
+            res.json(response)
+        })
+    })
+    app.get("/api/Routine/:title", function(req, res){
         console.log("HEY THIS ROUTE WAS HIT")
-        Routine.findAll({}).then(function(response){
+        Routine.findAll({
+            where: {
+                Title: req.params.title
+            }
+        }).then(function(response){
             console.log(response)
             res.json(response)
         })

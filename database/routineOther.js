@@ -1,13 +1,13 @@
-// var Sequelize = require("sequelize");
-// var sequelize = require("../config/connection.js");
+var Sequelize = require("sequelize");
+var sequelize = require("../config/connection.js");
 
-// var RoutineOther  = sequelize.define("routineOther", {
-//     Title: Sequelize.STRING,
-//     Muscles: Sequelize.STRING,
-//     Difficulty: Sequelize.STRING,
-//     Notes: Sequelize.STRING
-//   });
+var RoutineOther  = sequelize.define("routineOther", {
+    Title: Sequelize.STRING,
+    Muscles: Sequelize.STRING,
+    Difficulty: Sequelize.STRING,
+    Notes: Sequelize.STRING
+  });
   
-//   RoutineOther.sync();
+  RoutineOther.sync();
   
-//   module.exports = RoutineOther;
+  module.exports = RoutineOther;

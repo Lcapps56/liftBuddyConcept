@@ -31,26 +31,23 @@ header a {
     margin: 30px 75px;
     padding-left: 45px;
 }
-#workoutBox h1{
-    display: inline;
-    margin-right: 30px;
+/* modal style */
+#Mname::placeholder{
+    font-size: 30px;
+    font-weight: 500;
 }
-#Routine {
-    margin: 10px;
-    border: solid black 1px;
-}
-#Rother, #Rworkout{
-    display: inline-block;
-    width: 50%;
-    border: solid black 1px;
-}
-/* .view {
-    float: right;
-    background: none;
+.Other{
     border: none;
-    color: blue;
-    text-decoration: underline;
-} */
+    margin: 8px;
+    padding: 3px;
+    display: block;
+}
+.Other::placeholder{
+    font-size: 20px;
+    color: black;
+    overflow: visible;
+}
+
 
 .view:hover{
     font-size: 18px;
