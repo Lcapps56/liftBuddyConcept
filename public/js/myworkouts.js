@@ -7,7 +7,10 @@ $.ajax({
     var checkTitle = response[0].Title
     for(let i=0; i<response.length; i++){
         if(checkTitle === response[i].Title){
-
+            //create new HTML elements
+        } else {
+            checkTitle = response[i].Title
+            alert("the title has changed")
         }
     }
 })
