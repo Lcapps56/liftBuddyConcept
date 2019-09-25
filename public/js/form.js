@@ -78,7 +78,8 @@ $("#submit").on("click", function (event) {
     }).then(function(){
         console.log("sent to server")
     })
-}   
+    }   
+    location.replace('http://localhost:8081/home')
 })
 
 //adding new field to add a new workout

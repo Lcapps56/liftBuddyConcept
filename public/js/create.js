@@ -10,26 +10,30 @@ $("#submit").on("click", function (event) {
     });
 
     //that routine Other that will be passed into the database
-    var createForm = {
-        title: ($("#workoutName").val().toString()),
-        muscles: (muscles).toString(),  
-        difficulty: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
-        notes: ($("#notes").val().toString())
-    }
-    console.log(createForm)
-    $.ajax({
-        type: "POST",
-        data: {createForm: createForm},
-        url: "/api/routineOther",
-    }).then(function(){
-        console.log("routines Other sent to server")
-    })
+    // var createForm = {
+    //     title: ($("#workoutName").val().toString()),
+    //     muscles: (muscles).toString(),  
+    //     difficulty: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
+    //     notes: ($("#notes").val().toString())
+    // }
+    // console.log(createForm)
+    // $.ajax({
+    //     type: "POST",
+    //     data: {createForm: createForm},
+    //     url: "/api/routineOther",
+    // }).then(function(){
+    //     console.log("routines Other sent to server")
+    // })
 
     // ===========================================================
     //the routine
     var routine = []
     for (let i = 0; i < n + 1; i++) {
         workoutObject = {
+            title: ($("#workoutName").val().toString()),
+            muscles: (muscles).toString(),  
+            difficulty: ($("input[name='inlineRadioOptions']:checked").val()).toString(),
+            notes: ($("#notes").val().toString()),
             title: ($("#workoutName").val().toString()),
             type: $("#Type" + i + "").val(),
             sets: $("#Sets" + i + "").val(),

@@ -12,6 +12,7 @@ header h1 {
     /* border: solid black 1px; */
     margin: 15px 0px 0px 150px;
     font-size: 50px;
+    color: #6283fd;
 }
 header a {
     float: right;

@@ -6,6 +6,7 @@ $("#next").on("click", function(event){
 })
 $("#prev").on("click", function(event){
     onLoad()
+    
 })
 $("#modalClose").on("click", function(event){
     $("#modalText").text("")
@@ -18,7 +19,7 @@ $("a #buttonNew").on("click", function(){
     })
 })
 
-
+//pull all info from database and look for date matches on calendar
 function onLoad(){
     // gather all SQL data for date comparisons
     $.ajax({
@@ -35,9 +36,14 @@ function onLoad(){
         })
     })
 }
+//populate modal w/ correct info
 function whenClick(){
+    console.log("when click")
     $(".day a").on("click", function(event){
+        console.log($(this).data("hasWorkout"), "hi")
+        
         if($(this).data("hasWorkout") === true){
+            console.log("hasWorkout = true")
             // open the modal
             $(this).attr({
                 href: "#ex1", 
@@ -49,9 +55,9 @@ function whenClick(){
                 type: "GET",
                 url: "/api/modalOther/" + $(this).attr("data-id")
             }).then(function(response){
-                console.log("===========")
-                console.log(response)
-                console.log("=============")
+                // console.log("===========")
+                // console.log(response)
+                // console.log("=============")
                 //logic to conver 24 hour time to 12 hour time
                 var Time1 = timeConvert(response[0].StartTime)
                 var Time2 = timeConvert(response[0].EndTime)
@@ -71,9 +77,9 @@ function whenClick(){
                 type: "GET", 
                 url: "/api/modal/" + $(this).attr("data-id") 
             }).then(function(response){        
-                console.log("===========")
-                console.log(response)
-                console.log("=============")
+                // console.log("===========")
+                // console.log(response)
+                // console.log("=============")
                 // put the SQL data in the modal
                 for(let i=0; i<response.length; i++){
                     var newDiv = $("<div class='workout'></div>")
@@ -90,7 +96,6 @@ function whenClick(){
         }
     })
 }
-
 //logic to conver 24 hour time to 12 hour time
 function timeConvert (timeOne){
     var time = (timeOne).toString()

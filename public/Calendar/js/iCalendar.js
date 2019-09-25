@@ -123,7 +123,7 @@ class iCalendar {
                     }
                     a.setAttribute('data-id', this.currentYear + '-' + actualMonth + '-' + date)
                     
-                    a.setAttribute("data-hasWorkout", false)
+                    // a.setAttribute("data-hasWorkout", false)
                     // a.setAttribute("clicked", false)
                     
 
