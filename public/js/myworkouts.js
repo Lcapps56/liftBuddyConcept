@@ -1,4 +1,6 @@
-var what 
+var what
+$("#C").css("text-decoration", "underline")
+
 //gather all Routine info when page loads and populate for each individual workout
 $.ajax({
     type: "GET",
@@ -41,21 +43,24 @@ $(document).on("click", ".viewWorkout", function(){
                 
                 console.log(response)
                 // populate the modal with the Other info using the global variables
-                var newName = $("<input id='Mname' class='Other newO' placeholder='"+response[0].Title+"'></input>")
-                var newMuscles = $("<input id='Mmuscles' class='Other newO' placeholder='"+thisM+"'></input>")
-                var newDiff = $("<input id='Mdiff' class='Other newO' placeholder='"+thisD+"'></input>")
-                var newNotes = $("<input id='Mnotes' class='Other newO' placeholder='"+thisN+"'></input><hr>")
-                $("#modalText").append(newName, newMuscles, newDiff, newNotes)
+                var Otherdiv = $("<div class='Otherdiv'></div>")
+                var newName = $("<h1 id='Mname' class='Other'><b>Name: "+response[0].Title+"</b></h1><hr>")
+                var newMuscles = $("<p id='Mmuscles' class='Other'>Muscle group: "+thisM+"</p>")
+                var newDiff = $("<p id='Mdiff' class='Other'>Difficulty: "+thisD+"/10</p>")
+                var newNotes = $("<p id='Mnotes' class='Other'>Notes: "+thisN+"</p><hr>")
+                Otherdiv.append(newName, newMuscles, newDiff, newNotes)
+                $("#modalText").append(Otherdiv)
 
                 // populate the modal with the response from the ajax call for the Routine
                 for(let i=0; i<response.length; i++){
-                    var newType = $("<input id='Mtype" + n + "' class='Other new' placeholder='"+response[i].Type+"'></input>")
                     var Rdiv = $("<div class='routine'></div>")
-                    var newSet = $("<h4>Sets: </h4><input id='MSet" + n + "' class='ROther new' placeholder='"+response[i].Sets+"'></input>")
-                    var newRep = $("<h4>Reps: </h4><input id='MRep" + n + "' class='ROther new' placeholder='"+response[i].Reps+"'></input>")
-                    var newWeight = $("<h4>Weight: </h4><input id='MWeight" + n + "' class='ROther new' placeholder='"+response[i].Weight+"'></input>")
-                    $(Rdiv).append(newSet, newRep, newWeight)
-                    $("#modalText").append(newType, Rdiv)
+                    var newType = $("<h6 class='Mtype' class='ROther'>"+response[i].Type+"</h6>")
+                    var newSet = $("<p id='MSet' class='ROther'>Sets: "+response[i].Sets+"</p>")
+                    var newRep = $("<p id='MRep' class='ROther'> Reps: "+response[i].Reps+"</p>")
+                    var newWeight = $("<p id='MWeight' class='ROther'>Weight: "+response[i].Weight+"</p>")
+                    Rdiv.append(newType, newSet, newRep, newWeight)
+                    
+                    $("#modalText").append(Rdiv)
                     n++
                 }
             })
@@ -66,6 +71,7 @@ $("#modalClose").on("click", function(){
 })
 
 $(document).on("click", "#delete", function(){
+    console.log($(this).data("title"))
     $.ajax({
         type: "DELETE",
         url: "/api/delRoutine/"+ $(this).data("title")

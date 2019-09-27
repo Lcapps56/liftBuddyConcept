@@ -1,35 +1,67 @@
 body {
+ margin: 0px;
  background: url("../../images/Gym1.jpg") no-repeat;
  background-size: cover;
  max-height: 100%;
  background-size: 100% 850px;
- /* overla */
- /* background-position: center; */
-  /* background-color: rgba(0, 0, 0, 0.5) */
 }
 header{
     margin: 0px;
-    padding-bottom: 40px;
+    margin-bottom: 20px;
+    /* padding-bottom: 40px; */
     /* border: solid black 1px; */
     height: 100px;
     box-shadow: 3px 0px 15px rgb(51, 51, 51);
-
 }
 header h1 {
     float: left;
     /* border: solid black 1px; */
-    margin: 15px 0px 0px 150px;
+    margin: 15px 0px 0px 200px;
     font-size: 50px;
     color: #6283fd;
+    font-family: 'Archivo Black', sans-serif;}
+#formBs{
+    margin-right: 120px;
+    font-family: 'Quicksand', sans-serif;
+}
+.formB{
+    transition: .4s;
+    border: solid black 2px;
+    text-decoration: none;
+
+    border: solid white 1px;
+    padding: 5px 8px;;
+    font-size: 18px;
+    float: right;
+    margin: 30px;
+    margin-top: 30px;
+}
+#formBs a:hover {
+    background: white;
+    color: black;
+}
+#nav2{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+#nav2 a:hover{
+    text-decoration: underline;
+}
+.viewB{
+    color: white;
+    margin: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: .2s;
 }
 header a {
-    float: right;
-    margin: 25px 80px 0px 10px;
-    font-size: 20px;
-    padding: 8px;
-    /* border: solid black 1px; */
-
+    color: white;
 }
+
+
+
 
 #ex1{
     overflow: auto
@@ -293,24 +325,43 @@ a.calendarLink:hover {
 
 /** Calendar **/
 
-@media only screen and (max-width: 1084px) {
+@media only screen and (max-width: 1024px) {
+    body {
+        /* margin: 0px; */
+        background: url("../../images/gym2.jpg") no-repeat;
+        background-size: cover;
+        /* max-height: 100%;
+        background-size: 100% 850px; */
+    }
     #form {
         margin: 70px 40px;
     }
     .section {
         margin: 10px;
     }
-    header {
+    header h1{
         text-align: center;
+        margin-top: 5px;
     }
-    header a {
-        margin: 25px 20px 0px 10px;
+    #formBs{
+        margin-right: 10px;
     }
     
 }
 @media only screen and (max-width: 845px) {
-    #form {
-        margin: 70px 40px;
+    body {
+        /* margin: 0px; */
+        background: url("../../images/gym2.jpg") no-repeat;
+        background-size: cover;
+        /* max-height: 100%;
+        background-size: 100% 850px; */
+    }
+    #formBs {
+        text-align: center;
+        
+    }
+    .formB{
+        display: block;
     }
     .section {
         margin: 10px;
@@ -323,5 +374,29 @@ a.calendarLink:hover {
     header h1 {
         text-align: center;
         margin-right: 500px;
+
     }
+}
+@media only screen and (max-width: 400px) {
+    body {
+        /* margin: 0px; */
+        background: url("../../images/gym2.jpg") no-repeat;
+        background-size: cover;
+        /* max-height: 100%;
+        background-size: 100% 850px; */
+    }
+    header h1{
+        margin: 0px 75px;
+    }
+    
+    .formB{
+        text-align: center;
+        display: inline-block;
+        margin: 10px;
+        padding: 5px;
+    }
+    #calendar{
+        margin: 20px;
+    }
+    
 }

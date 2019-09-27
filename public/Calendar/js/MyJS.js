@@ -1,3 +1,4 @@
+$("#C").css("text-decoration", "underline")
 onLoad()
 whenClick() 
 
@@ -83,7 +84,7 @@ function whenClick(){
                 // put the SQL data in the modal
                 for(let i=0; i<response.length; i++){
                     var newDiv = $("<div class='workout'></div>")
-                    var newType = $("<h6>"+ response[i].Type + "</h6>")
+                    var newType = $("<h4>"+ response[i].Type + "</h4>")
                     var newSets = $("<p class='category' >"+ "Sets: " + response[i].Sets + "</p>")
                     var newReps = $("<p class='category' >"+ "Reps: " + response[i].Reps + "</p>")
                     var newWeight = $("<p class='category' >"+ "Weight: " + response[i].Weight + "</p>")

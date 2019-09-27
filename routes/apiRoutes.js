@@ -125,7 +125,6 @@ module.exports = function (app) {
     ]).then(function(){
         console.log("Routines Other seed entered into database")
     })
-
     // when the form submits, put the workout into the database
     app.post("/api/workout", function (req, res) {
         console.log("/api/workout is HIT")
@@ -167,7 +166,7 @@ module.exports = function (app) {
             Routine.create({
                 Title: req.body.routine[i].title,
                 Type: req.body.routine[i].type,
-                Sets: req.body.routine[i].type,
+                Sets: req.body.routine[i].sets,
                 Reps: req.body.routine[i].reps,
                 Weight: req.body.routine[i].weight,
             }).then(function () {
