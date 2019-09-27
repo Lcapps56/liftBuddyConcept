@@ -59,6 +59,9 @@ body {
    header a {
        color: white;
    }
+   .section{
+    box-shadow: 0px 0px 5px rgb(177, 176, 176)
+   }
 
 @media only screen and (max-width: 1084px) {
     #form {
@@ -83,11 +86,8 @@ body {
         /* max-height: 100%;
         background-size: 100% 850px; */
     }
-    #formBs {
-        text-align: center;
-    }
-    .formB{
-        display: block;
+    #form {
+        margin: 70px 40px;
     }
     .section {
         margin: 10px;
