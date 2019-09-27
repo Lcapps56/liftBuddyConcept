@@ -1,4 +1,12 @@
-
+body {
+ background: url("../../images/Gym1.jpg") no-repeat;
+ background-size: cover;
+ max-height: 100%;
+ background-size: 100% 850px;
+ /* overla */
+ /* background-position: center; */
+  /* background-color: rgba(0, 0, 0, 0.5) */
+}
 header{
     margin: 0px;
     padding-bottom: 40px;

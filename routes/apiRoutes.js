@@ -229,4 +229,52 @@ module.exports = function (app) {
             res.json(response)
         })
     })
+    app.delete("/api/delRoutine/:title", function(req, res) {
+        // We just have to specify which todo we want to destroy with "where"
+        Routine.destroy({
+          where: {
+            title: req.params.title
+          }
+        })
+        RoutineOther.destroy({
+            where: {
+                title: req.params.title
+            }
+        })
+    
+      })
+    // when the user clicks save on the modal, update that routine with the new information
+    // app.post("/api/updateRO/:title", function(req, res){
+    //     console.log("THE OBJECT: " + req.body.info.newName)
+    //     RoutineOther.update({
+    //             Title: req.body.info.newName,
+    //             Muscles: req.body.info.newMuscles,
+    //             Difficulty: req.body.info.newDiff,
+    //             Notes: req.body.info.newNotes
+    //         }, {
+    //             where: {
+    //                 Title: (req.params.title).replace("_", " ")
+    //             }
+    //         }
+    //     ).then(function(){
+    //         console.log("routines Other has been updated")
+    //     })
+    // })
+    // app.post("/api/updateRN/:title", function(req, res){
+    //     for(let i=0; i<req.body.length; i++){
+    //         Routine.update({
+    //             Title: req.params.title,
+    //             Type: req.body.Routine[i].newType,
+    //             Sets: req.body.Routine[i].newSet,
+    //             Reps: req.body.Routine[i].newRep,
+    //             Weight: req.body.Routine[i].newWeight
+    //         }, {
+    //             where: {
+    //                 Title: (req.params.title).replace("_", " ")
+    //             }
+    //         }).then(function(){
+    //         console.log("routines workout has been updated")
+    //     }) 
+    // }
+    // })
 }

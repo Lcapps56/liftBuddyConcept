@@ -31,6 +31,8 @@ header a {
     margin: 30px 75px;
     padding-left: 45px;
 }
+
+
 /* modal style */
 #Mname::placeholder{
     font-size: 30px;
@@ -39,17 +41,24 @@ header a {
 .Other{
     border: none;
     margin: 8px;
+    margin-left: 0px;
     padding: 3px;
     display: block;
 }
-.Other::placeholder{
-    font-size: 20px;
-    color: black;
-    overflow: visible;
-}
+
+
 #Mtype::placeholder{
+    color: black;
     font-size: 30px;
     font-weight: 500;
+}
+/* modal Routine Styles */
+h4, .ROther{
+    display: block;
+}
+.routine{
+    margin-left: 30px;
+    margin-bottom: 20px;
 }
 #ex1{
     overflow: auto
