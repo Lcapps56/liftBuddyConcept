@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
-var WorkoutOther = sequelize.define("workoutOther", {
+var WorkoutOther = sequelize.define("workoutother", {
     Date: Sequelize.STRING,
     Muscles: Sequelize.STRING,
     StartTime: Sequelize.STRING,
