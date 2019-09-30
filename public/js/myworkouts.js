@@ -60,6 +60,7 @@ $(document).on("click", ".viewWorkout", function(){
                     var newWeight = $("<p id='MWeight' class='ROther'>Weight: "+response[i].Weight+"</p>")
                     Rdiv.append(newType, newSet, newRep, newWeight)
                     
+                    
                     $("#modalText").append(Rdiv)
                     n++
                 }
