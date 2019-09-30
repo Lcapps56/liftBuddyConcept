@@ -46,7 +46,7 @@ $("#submit").on("click", function (event) {
     }).then(function(){
         console.log("routine sent to server")
     })
-    location.replace('http://localhost:8081/myworkouts')
+    location.replace('/myworkouts')
 })
 
 
