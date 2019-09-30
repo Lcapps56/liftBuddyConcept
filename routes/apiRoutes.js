@@ -7,6 +7,7 @@ var RoutineOther = require("../database/routineOther.js")
 module.exports = function (app) {
     //workout Other seeds
     WorkoutOther.bulkCreate([
+        // test
         {
             Date: "2019-09-3",
             Muscles: "Legs",
@@ -28,6 +29,7 @@ module.exports = function (app) {
     })
     //workout seeds
     Workout.bulkCreate([
+        // test
         //seeds for september 3
         {
             Date: "2019-09-3",
@@ -91,6 +93,7 @@ module.exports = function (app) {
     })
     //Routine Seeds
     Routine.bulkCreate([
+        // test
         {
             Title: "Example Workout",
             Type: "Push ups",
@@ -116,6 +119,7 @@ module.exports = function (app) {
         console.log("Routine seed entered into database")
     })
     RoutineOther.bulkCreate([
+        // test
         {
             Title: "Example Workout",
             Muscles: "Arms",
