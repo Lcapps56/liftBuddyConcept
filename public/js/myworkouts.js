@@ -54,7 +54,7 @@ $(document).on("click", ".viewWorkout", function(){
                 // populate the modal with the response from the ajax call for the Routine
                 for(let i=0; i<response.length; i++){
                     var Rdiv = $("<div class='routine'></div>")
-                    var newType = $("<h6 class='Mtype' class='ROther'>"+response[i].Type+"</h6>")
+                    var newType = $("<h4 class='Mtype' class='ROther'>"+response[i].Type+"</h4>")
                     var newSet = $("<p id='MSet' class='ROther'>Sets: "+response[i].Sets+"</p>")
                     var newRep = $("<p id='MRep' class='ROther'> Reps: "+response[i].Reps+"</p>")
                     var newWeight = $("<p id='MWeight' class='ROther'>Weight: "+response[i].Weight+"</p>")
