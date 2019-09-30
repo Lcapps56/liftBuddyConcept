@@ -142,6 +142,7 @@ module.exports = function (app) {
                 // res.json(response)
             })
         }
+        // test
     });
     // when the form submits, put the other information into the other database table
     app.post("/api/workoutOther", function (req, res) {
