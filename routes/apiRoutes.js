@@ -92,21 +92,21 @@ module.exports = function (app) {
     //Routine Seeds
     Routine.bulkCreate([
         {
-            Title: "The First",
+            Title: "Example Workout",
             Type: "Push ups",
             Sets: "3",
             Reps: "10",
             Weight: "0"
         },
         {
-            Title: "The First",
+            Title: "Example Workout",
             Type: "Sit ups",
             Sets: "3",
             Reps: "10",
             Weight: "0"
         },
         {
-            Title: "The First",
+            Title: "Example Workout",
             Type: "Pull ups",
             Sets: "4",
             Reps: "10",
@@ -117,7 +117,7 @@ module.exports = function (app) {
     })
     RoutineOther.bulkCreate([
         {
-            Title: "The First",
+            Title: "Example Workout",
             Muscles: "Arms",
             Difficulty: "3",
             Notes: "None for now"
