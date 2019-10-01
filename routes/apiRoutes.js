@@ -29,7 +29,6 @@ module.exports = function (app) {
     })
     //workout seeds
     Workout.bulkCreate([
-        // test
         //seeds for september 3
         {
             Date: "2019-09-3",
