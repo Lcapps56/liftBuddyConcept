@@ -27,3 +27,13 @@ __back end__
 * MySQL
 * sequelize
 * GET, POST, DELETE routes
+
+#icebox
+in the final app i would like to have statistics along with the calendar. 
+something that tracked your progress over time with the workouts you do. 
+for example, 
+* weight loss/gain
+* muscle groups hit the most
+* progress in lifting weight
+* workouts hit in a week/ month
+* AVG time spent working out
