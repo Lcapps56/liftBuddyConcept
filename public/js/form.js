@@ -25,9 +25,9 @@ $("#submit").on("click", function (event) {
     console.log(date)
 
 //   VALIDATIONS
-    if(M > thisMonth || D > thisDay){
-        alert("cannot input a future day")
-    } else {
+    // if(M > thisMonth || D > thisDay){
+    //     alert("cannot input a future day")
+    // } else {
 
     //checks the muscles checkbox to create array of muscle groups chosen
     var muscles = [];
@@ -78,7 +78,7 @@ $("#submit").on("click", function (event) {
     }).then(function(){
         console.log("sent to server")
     })
-    }   
+    // }   
     location.replace('/home')
 })
 
