@@ -9,7 +9,7 @@ module.exports = function (app) {
     WorkoutOther.bulkCreate([
         
         {
-            Date: "2019-09-3",
+            Date: "2019-10-1",
             Muscles: "Legs",
             StartTime: "19:30PM",
             EndTime: "20:30PM",
@@ -31,28 +31,28 @@ module.exports = function (app) {
     Workout.bulkCreate([
         //seeds for september 3
         {
-            Date: "2019-09-3",
+            Date: "2019-10-1",
             Type: "Squats",
             Sets: "3",
             Reps: "10",
             Weight: "160"
         },
         {
-            Date: "2019-09-3",
+            Date: "2019-10-1",
             Type: "Hamstring Curls",
             Sets: "3",
             Reps: "12",
             Weight: "80"
         },
         {
-            Date: "2019-09-3",
+            Date: "2019-10-1",
             Type: "Calf raises",
             Sets: "3",
             Reps: "10",
             Weight: "100"
         },
         {
-            Date: "2019-09-3",
+            Date: "2019-10-1",
             Type: "Leg press",
             Sets: "3",
             Reps: "10",
