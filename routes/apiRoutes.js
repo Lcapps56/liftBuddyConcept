@@ -177,7 +177,6 @@ module.exports = function (app) {
                 console.log("routine entered into the database")
             })
         }
-        // trst
     })
     app.post("/api/routineOther", function(req, res){
         RoutineOther.create({
