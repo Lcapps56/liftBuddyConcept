@@ -51,13 +51,13 @@ module.exports = function (app) {
             Reps: "10",
             Weight: "100"
         },
-        {
-            Date: "2019-10-1",
-            Type: "Leg press",
-            Sets: "3",
-            Reps: "10",
-            Weight: "250"
-        },
+        // {
+        //     Date: "2019-10-1",
+        //     Type: "Leg press",
+        //     Sets: "3",
+        //     Reps: "10",
+        //     Weight: "250"
+        // },
         // seeds for september 12
         {
             Date: "2019-09-12",
