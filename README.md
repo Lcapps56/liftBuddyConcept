@@ -37,3 +37,6 @@ for example,
 * progress in lifting weight
 * workouts hit in a week/ month
 * AVG time spent working out
+
+
+![image](./image/Annotation%202019-10-11%20143349.png)
